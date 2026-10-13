@@ -85,10 +85,3 @@ const answer = await runAgent(
 | `src/approval/cliGate.ts` | Terminal approval with typed confirmation |
 | `src/audit/log.ts` | In-memory audit trail |
 | [TRADEOFFS.md](TRADEOFFS.md) | What the core covers and what's deliberately left out (memory, real connectors, sandboxing, evals) |
-
-## Status and limitations
-
-- **No `package.json`, entry point, or tests.** The modules are plain TypeScript with no runtime dependencies; run them with a TypeScript runner such as `tsx`.
-- **Policies aren't applied yet.** `defaultPolicy` exists, but `decide()` uses each tool's base permission without a `RunContext`.
-- **The CLI gate identifies dangerous tools by name** (`delete_repo`) rather than by the engine's `dangerous` level.
-- Validation checks required keys only, not types; example tools return simulated results; the audit trail is in memory.
